@@ -2,7 +2,7 @@
 # Twitter text data mining and analyses                                                         #
 # SAPPK - Institut Teknologi Bandung                                                            #
 #                                                                                               #
-# Script names  : twitter_analysis.R                                                     #
+# Script names  : twitter_analysis.R                                                            #
 # Purpose       : This scripts contains lines of commands and function to perform basic         #
 #                 tasks for retrieving tweets and analyzing tweets                              #
 # Programmer    : Adenantera Dwicaksono                                                         #
@@ -76,8 +76,8 @@ dir()
 #Store consumer and access token keys
 consumerKey <- "your_consumer_key_goes_here"
 consumerSecret <- "your_secret_consumer_key_goes_here"
-accessToken <- "your_access_token_key"
-accessSecret <- "your_secret_access_token_key"
+accessToken <- "your_access_token_key_goes_here"
+accessSecret <- "your_secret_access_token_key_goes_here"
 
 #set the global option for OAuthentication setting
 options(httr_oauth_cache=TRUE)
@@ -169,7 +169,7 @@ wordcloud(tw.corpus.proc,min.freq=10,max.words=80,scale=c(4,.5), colors=brewer.p
 pos.words <- scan("./positive.csv", what = 'character')
 neg.words <- scan("./negative.csv", what = 'character')
 
-# Create a function for sentiment analysis
+# Create a function for sentiment analysis based on Rohit Nair's script.
 sentiment.score = function(sentences, pos.words, neg.words, .progress = 'none')
 {
   # we got a vector of sentences. plyr will handle a list
